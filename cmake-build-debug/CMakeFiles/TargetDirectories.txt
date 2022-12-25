@@ -1,0 +1,3 @@
+C:/Users/Abderrahim/CLionProjects/ord-m2-sid/cmake-build-debug/CMakeFiles/ord_m2_sid.dir
+C:/Users/Abderrahim/CLionProjects/ord-m2-sid/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Abderrahim/CLionProjects/ord-m2-sid/cmake-build-debug/CMakeFiles/rebuild_cache.dir
