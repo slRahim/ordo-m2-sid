@@ -27,29 +27,32 @@ typedef struct {
 
 } task_t;
 
+/////////////////////////////////// zone
+typedef struct {
+    task_t tab[NB_TACHE_MAX];
+    unsigned int nb_tasks,
+            process_time,
+            id_zone,
+            id_parent_machine;
+
+} zone_t;
 
 /////////////////////////////////// machine
 typedef struct {
     unsigned int id_machine,
             pause_duration,
-            start_pause;
+            start_pause,
+            end_pause;
+    zone_t zone_a,
+        zone_b ;
 
 } machine_t;
 
-/////////////////////////////////// zone
-typedef struct {
-    task_t tab[NB_TACHE_MAX];
-    unsigned int nb_tasks,
-            id_zone,
-            id_parent_machine;
-    bool before_pause;
-
-} zone_t;
 
 //////////////////////////////////  solution
 
 typedef struct {
-    task_t tab[NB_TACHE_MAX];
+    task_t* tab[NB_TACHE_MAX];
     unsigned int nb_tache;
 } solution_t;
 
@@ -57,7 +60,9 @@ typedef struct {
 
 task_t *init_tab_task(int taille);
 
-task_t init_task(unsigned int id_task, unsigned int duration, unsigned int due_date, unsigned int zone_position);
+task_t init_task(unsigned int id_task, unsigned int duration, unsigned int due_date);
+
+zone_t init_zone(unsigned int id_zone , unsigned int id_parent_machine , unsigned int nb_tasks);
 
 machine_t init_machine(unsigned int id_machine , unsigned int pause_duration , unsigned int start_pause);
 

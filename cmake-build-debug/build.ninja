@@ -61,12 +61,6 @@ build CMakeFiles/ord_m2_sid.dir/heuristics.c.obj: C_COMPILER__ord_m2_sid_Debug C
   OBJECT_DIR = CMakeFiles\ord_m2_sid.dir
   OBJECT_FILE_DIR = CMakeFiles\ord_m2_sid.dir
 
-build CMakeFiles/ord_m2_sid.dir/local_search.c.obj: C_COMPILER__ord_m2_sid_Debug C$:/Users/Abderrahim/CLionProjects/ord-m2-sid/local_search.c || cmake_object_order_depends_target_ord_m2_sid
-  DEP_FILE = CMakeFiles\ord_m2_sid.dir\local_search.c.obj.d
-  FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\ord_m2_sid.dir
-  OBJECT_FILE_DIR = CMakeFiles\ord_m2_sid.dir
-
 build CMakeFiles/ord_m2_sid.dir/genetic.c.obj: C_COMPILER__ord_m2_sid_Debug C$:/Users/Abderrahim/CLionProjects/ord-m2-sid/genetic.c || cmake_object_order_depends_target_ord_m2_sid
   DEP_FILE = CMakeFiles\ord_m2_sid.dir\genetic.c.obj.d
   FLAGS = -g -std=gnu99
@@ -87,7 +81,7 @@ build CMakeFiles/ord_m2_sid.dir/init_core.c.obj: C_COMPILER__ord_m2_sid_Debug C$
 #############################################
 # Link the executable ord_m2_sid.exe
 
-build ord_m2_sid.exe: C_EXECUTABLE_LINKER__ord_m2_sid_Debug CMakeFiles/ord_m2_sid.dir/main.c.obj CMakeFiles/ord_m2_sid.dir/heuristics.c.obj CMakeFiles/ord_m2_sid.dir/local_search.c.obj CMakeFiles/ord_m2_sid.dir/genetic.c.obj CMakeFiles/ord_m2_sid.dir/init_core.c.obj
+build ord_m2_sid.exe: C_EXECUTABLE_LINKER__ord_m2_sid_Debug CMakeFiles/ord_m2_sid.dir/main.c.obj CMakeFiles/ord_m2_sid.dir/heuristics.c.obj CMakeFiles/ord_m2_sid.dir/genetic.c.obj CMakeFiles/ord_m2_sid.dir/init_core.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ord_m2_sid.dir

@@ -1,0 +1,8 @@
+# ninja log v5
+17	229	6937760227557358	CMakeFiles/ord_m2_sid.dir/genetic.c.obj	a63d1a06a9cbb0e7
+228	434	6937761248328525	ord_m2_sid.exe	be29b5197abcac7f
+11	228	6937761246214176	CMakeFiles/ord_m2_sid.dir/heuristics.c.obj	8ee746a73f39ade3
+216	351	6937760228925352	CMakeFiles/ord_m2_sid.dir/init_core.c.obj	f26fb6d754ea5264
+3	221	6937761246124430	CMakeFiles/ord_m2_sid.dir/main.c.obj	3478070d596a83dc
+3	131	6937762625329902	CMakeFiles/ord_m2_sid.dir/heuristics.c.obj	8ee746a73f39ade3
+132	325	6937762627194894	ord_m2_sid.exe	be29b5197abcac7f

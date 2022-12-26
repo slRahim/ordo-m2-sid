@@ -27,8 +27,8 @@ solution_t mutation2 ( solution_t solution){
     int k = 0;
 
     for ( i=rand+1 ; i < solution.nb_tache ; i++ ){
-        task_t a  = solution.tab[rand] ;
-        task_t b = solution.tab[i] ;
+//        task_t a  = solution.tab[rand] ;
+//        task_t b = solution.tab[i] ;
 //        if(i%2 == rand%2){
 //            if((b.date_debut <= a.date_debut) && (b.duree >= a.duree)){
 //                resultat = solution ;
