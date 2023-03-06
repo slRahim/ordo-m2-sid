@@ -1,5 +1,5 @@
 //
-// Created by Abderrahim on 12/25/2022.
+// Created by Abderrahim And Hamza on 12/25/2022.
 //
 
 #include "init_core.h"
@@ -21,12 +21,12 @@ task_t init_task(unsigned int id_task, unsigned int duration, unsigned int due_d
     return res;
 }
 
-zone_t init_zone(unsigned int id_zone , unsigned int id_parent_machine , unsigned int nb_tasks){
-    zone_t res ;
+zone_t init_zone(unsigned int id_zone, unsigned int id_parent_machine, unsigned int nb_tasks) {
+    zone_t res;
     res.id_zone = id_zone;
     res.id_parent_machine = id_parent_machine;
-    res.nb_tasks=nb_tasks;
-    res.process_time = 0 ;
+    res.nb_tasks = nb_tasks;
+    res.process_time = 0;
 
     return res;
 }
@@ -37,10 +37,10 @@ machine_t init_machine(unsigned int id_machine, unsigned int pause_duration, uns
     res.id_machine = id_machine;
     res.pause_duration = pause_duration;
     res.start_pause = start_pause;
-    res.end_pause = start_pause+pause_duration;
+    res.end_pause = start_pause + pause_duration;
 
-    res.zone_a = init_zone(2*id_machine-1 , id_machine,0);
-    res.zone_b = init_zone(2*id_machine , id_machine,0);
+    res.zone_a = init_zone(2 * id_machine - 1, id_machine, 0);
+    res.zone_b = init_zone(2 * id_machine, id_machine, 0);
 
 
     return res;
@@ -113,8 +113,8 @@ char *stringMachine(const machine_t machine) {
             "Machine{ id : %d , pause_duration : %d , start_pause : %d , end_pause : %d ,zones[\n",
             machine.id_machine, machine.pause_duration, machine.start_pause, machine.end_pause
     );
-    zone_t* zone_a = &machine.zone_a;
-    zone_t* zone_b = &machine.zone_b;
+    zone_t *zone_a = &machine.zone_a;
+    zone_t *zone_b = &machine.zone_b;
 
     char *s_zone_a = stringZone(*zone_a);
     strcat(res, s_zone_a);
@@ -130,7 +130,6 @@ char *stringMachine(const machine_t machine) {
 
     return res;
 }
-
 
 
 void print_tache(const task_t task) {
@@ -170,38 +169,53 @@ void print_solution(const solution_t *sol) {
 }
 
 
-int partitionner(task_t *tableau, int p, int r,bool (*fct)(task_t task1 , task_t task2)) {
+int partitionner(task_t *tableau, int p, int r, bool (*fct)(task_t task1, task_t task2)) {
     task_t pivot = tableau[p];
-    int i = p-1, j = r+1;
+    int i = p - 1, j = r + 1;
     task_t temp;
     while (1) {
         do
             j--;
-        while ( fct(tableau[j], pivot)); //>
+        while (fct(tableau[j], pivot)); //>
         do
             i++;
-        while (fct(pivot,tableau[i]));
+        while (fct(pivot, tableau[i]));
         if (i < j) {
             temp = tableau[i];
             tableau[i] = tableau[j];
             tableau[j] = temp;
-        }
-        else
+        } else
             return j;
     }
 }
 
-void quickSort(task_t *tableau, int p, int r,bool (*fct)(task_t tache1 , task_t tache2) ) {
+void quickSort(task_t *tableau, int p, int r, bool (*fct)(task_t tache1, task_t tache2)) {
     int q;
     if (p < r) {
-        q = partitionner(tableau, p, r,fct);
-        quickSort(tableau, p, q,fct);
-        quickSort(tableau, q+1, r,fct);
+        q = partitionner(tableau, p, r, fct);
+        quickSort(tableau, p, q, fct);
+        quickSort(tableau, q + 1, r, fct);
     }
 }
 
-bool withDueDate(task_t task1,task_t task2){
+bool withDueDate(task_t task1, task_t task2) {
     return task1.due_date > task2.due_date;
+}
+
+bool withDuration(task_t task1, task_t task2) {
+    return task1.duration > task2.duration;
+}
+
+bool withDurationAndDueDate(task_t task1, task_t task2) {
+
+    if (task2.duration == 12 && task1.duration == 10) printf("fghjkl");
+    if (task1.duration > task2.duration)
+        return true;
+    else if (task1.duration = task2.duration) {
+        if (task1.due_date > task2.due_date)
+            return true;
+        else return false;
+    } else return false;
 }
 
 

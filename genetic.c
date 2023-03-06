@@ -1,32 +1,32 @@
 //
-// Created by Abderrahim on 12/25/2022.
+// Created by Abderrahim And Hamza on 12/25/2022.
 //
 
 #include "genetic.h"
 
-void croisement(solution_t* sol1, solution_t* sol2){
+void croisement(solution_t *sol1, solution_t *sol2) {
 
     int taille = sol1->nb_tache;
     int alea;
     int j = 0;
     solution_t temp = *sol1;
 
-    alea = alea_entre_bornes(2,taille-2);
-    printf("alea : %d\n",alea);
-    for(j = alea;j<taille;j++){
+    alea = alea_entre_bornes(2, taille - 2);
+    printf("alea : %d\n", alea);
+    for (j = alea; j < taille; j++) {
         sol1->tab[j] = sol2->tab[j];
-        sol2->tab[j]=temp.tab[j];
+        sol2->tab[j] = temp.tab[j];
     }
 
 }
 
-solution_t mutation2 ( solution_t solution){
-    solution_t  resultat ;
-    int rand  = alea_entre_bornes(2,solution.nb_tache/2 - 1 ) ;
-    int i,j = rand ;
+solution_t mutation2(solution_t solution) {
+    solution_t resultat;
+    int rand = alea_entre_bornes(2, solution.nb_tache / 2 - 1);
+    int i, j = rand;
     int k = 0;
 
-    for ( i=rand+1 ; i < solution.nb_tache ; i++ ){
+    for (i = rand + 1; i < solution.nb_tache; i++) {
 //        task_t a  = solution.tab[rand] ;
 //        task_t b = solution.tab[i] ;
 //        if(i%2 == rand%2){
